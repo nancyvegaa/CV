@@ -1,0 +1,557 @@
+<?php
+    $nombre = "Nancy Areli Vega Vázquez";
+    $profesion = "Estudiante de Informática";
+    $bio = "Enfocada en la administración de bases de datos relacionales y la maquetación de interfaces web. Me interesa la estructuración precisa de la información y la presentación visual clara de datos que faciliten la toma de decisiones.";
+    $ubicacion = "Naucalpan, México";
+    $telefono = "5615453941";
+    $email = "nancyvegaat@gmail.com";
+    $github = "github.com/nancyvegaa";
+
+    $idiomas = [
+        ["nombre" => "Español", "nivel" => "Nativo"],
+        ["nombre" => "Inglés", "nivel" => "B1"]
+    ];
+
+    $habilidades = [
+        ["nombre" => "C / C++", "nivel" => "Intermedio"],
+        ["nombre" => "HTML5 / CSS3", "nivel" => "Intermedio"],
+        ["nombre" => "MySQL", "nivel" => "Intermedio"],
+        ["nombre" => "SQL Server", "nivel" => "Intermedio"],
+        ["nombre" => "Excel", "nivel" => "Intermedio"],
+    ];
+
+    $habilidadesBlandas = [
+        ["nombre" => "Trabajo en equipo", "nivel" => "Destacado"],
+        ["nombre" => "Comunicación efectiva", "nivel" => "Destacado"],
+        ["nombre" => "Organización y planificación", "nivel" => "Destacado"],
+        ["nombre" => "Pensamiento analítico", "nivel" => "Destacado"],
+        ["nombre" => "Atención al detalle", "nivel" => "Destacado"],
+    ];
+
+    $cursos = [
+        ["nombre" => "Desarrollo Web Frontend (HTML5 y CSS3)", "institucion" => "Fundación Televisa / Tecnolochicas PRO"],
+        ["nombre" => "Excel – Básico a Intermedio", "institucion" => "Santander Open Academy"],
+        ["nombre" => "Introducción a la Ciencia de Datos", "institucion" => "Fundación Televisa / Tecnolochicas PRO"]
+    ];
+
+    $proyectos = [
+        [
+            "titulo" => "Sistema de préstamos de Biblioteca",
+            "fecha" => "Proyecto Académico",
+            "descripcion" => "Plataforma web con control de acceso por roles (administrador y alumno). Desarrollo de la arquitectura inicial, triggers para validaciones, rediseño de interfaz y mantenimiento en SQL Server.",
+            "tags" => ["PHP", "HTML5", "CSS3", "SQL Server"]
+        ],
+        [
+            "titulo" => "Análisis de Datos con Diagrama de Pareto",
+            "fecha" => "Proyecto Académico",
+            "descripcion" => "Vinculación de la base de datos (MS Access) de una aplicación Java hacia Excel para generar reportes con el Diagrama de Pareto. Identificación de productos de alta rotación y servicios clave del negocio.",
+            "tags" => ["Excel", "Análisis de Datos", "Access", "Java"]
+        ]
+    ];
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio — <?php echo $nombre; ?></title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --font-h:'Playfair Display',serif;
+    --font-b:'Plus Jakarta Sans',sans-serif;
+    --bg:#f5f8fc;
+    --black:#0f172a;
+    --border:#dce5ef;
+    --muted:#334155;
+    --muted-soft:#475569;
+    --blue:#3b82c4;
+    --blue-dark:#1e5a8a;
+    --blue-soft:#e6f0fa;
+}
+html{scroll-behavior:smooth;scroll-padding-top:100px;}
+body{font-family:var(--font-b);background:var(--bg);color:var(--black);font-size:1.35rem;line-height:1.8;}
+h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
+
+/* NAVBAR */
+.navbar-custom{position:sticky;top:0;z-index:1000;background:rgba(245,248,252,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:1.1rem 0;}
+.nav-tabs-custom{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;margin:0;padding:0;}
+.nav-tabs-custom a{display:inline-block;padding:10px 22px;font-size:1.2rem;font-weight:600;color:var(--muted);text-decoration:none;border-radius:50px;transition:.25s;}
+.nav-tabs-custom a:hover{color:var(--black);background:rgba(15,23,42,.05);}
+.nav-tabs-custom a.active{background:var(--black);color:#fff;}
+
+/* BOTÓN NEGRO */
+.btn-black{background:var(--black);color:#fff;border:1.5px solid var(--black);border-radius:50px;padding:12px 32px;font-weight:600;font-size:1.2rem;transition:.25s;}
+.btn-black:hover{background:transparent;color:var(--black);}
+
+/* HERO CON BANNER AZUL */
+.hero{padding:5.5rem 0 4.5rem;background:linear-gradient(135deg, #1e5a8a 0%, #3b82c4 100%);color:#ffffff;position:relative;overflow:hidden;text-align:center;}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:linear-gradient(90deg, #1e5a8a, #60a5fa, #1e5a8a);}
+.hero .container{max-width:900px;}
+.hero-avatar{width:150px;height:150px;border-radius:50%;background:#ffffff;color:var(--blue-dark);display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-size:3rem;font-weight:700;margin:0 auto 2rem;box-shadow:0 15px 30px rgba(0,0,0,.2);}
+.hero-name{font-size:4.5rem;font-weight:700;line-height:1.1;margin-bottom:1rem;color:#ffffff;}
+.hero-role{font-size:1.8rem;font-weight:600;color:#ffffff;margin-bottom:1.8rem;opacity:.95;}
+.hero-bio{font-size:1.35rem;color:#ffffff;max-width:720px;margin:0 auto;line-height:1.9;text-align:justify;text-align-last:center;opacity:.95;}
+.hero-contact{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.8rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.25);}
+.contact-item{display:flex;align-items:center;gap:10px;font-size:1.25rem;color:#ffffff;white-space:nowrap;}
+.contact-item i{font-size:1.5rem;color:#ffffff;}
+
+/* SECCIONES */
+.section-editorial{padding:6rem 0;position:relative;}
+.section-editorial::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80%;height:2px;background:linear-gradient(90deg, transparent, var(--blue), transparent);}
+.section-editorial:first-of-type::before{display:none;}
+.section-number{font-family:var(--font-h);font-size:2.1rem;font-weight:700;color:var(--blue);display:inline-block;margin-bottom:1.2rem;padding:8px 18px;border-radius:50px;transition:.3s;cursor:default;}
+.section-number:hover{box-shadow:0 8px 20px rgba(15,23,42,.25);transform:translateY(-3px);background:var(--black);color:#fff;}
+.section-heading{font-size:3.2rem;font-weight:700;margin-bottom:2.5rem;line-height:1.1;}
+
+/* ITEMS CON HOVER AZUL */
+.edu-item,.course-item{padding:1.8rem 0;border-bottom:1px solid var(--border);transition:.3s;border-radius:10px;}
+.edu-item:hover,.course-item:hover{background-color:var(--blue-soft);padding-left:1.5rem;border-bottom-color:transparent;}
+.edu-item:last-child,.course-item:last-child{border-bottom:none;}
+.edu-title,.course-name{font-size:1.8rem;font-weight:700;margin-bottom:.35rem;}
+.course-name{font-size:1.7rem;font-weight:600;}
+.edu-institution,.course-institution{font-size:1.4rem;color:var(--muted-soft);font-style:italic;margin-bottom:.9rem;font-weight:500;}
+.course-institution{margin-bottom:0;}
+.edu-date,.project-date{font-size:1.2rem;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:.05em;}
+.edu-date{display:inline-block;}
+
+/* HABILIDADES - ETIQUETAS AZULES Y HOVER */
+.skill-row{display:flex;justify-content:space-between;align-items:center;padding:1.8rem 0;border-bottom:1px solid var(--border);gap:1rem;flex-wrap:wrap;transition:.3s;border-radius:10px;}
+.skill-row:hover{background-color:var(--blue-soft);padding-left:1.5rem;border-bottom-color:transparent;}
+.skill-row:last-child{border-bottom:none;}
+.skill-name{font-size:1.75rem;font-weight:600;}
+.skill-tag{display:inline-block;padding:10px 24px;border-radius:50px;font-size:1.1rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;background:var(--blue-soft);color:var(--blue);border:1.5px solid var(--blue);}
+
+/* IDIOMAS CON HOVER AZUL */
+.lang-item{display:flex;justify-content:space-between;align-items:center;padding:1.8rem 0;border-bottom:1px solid var(--border);transition:.3s;border-radius:10px;}
+.lang-item:hover{background-color:var(--blue-soft);padding-left:1.5rem;border-bottom-color:transparent;}
+.lang-item:last-child{border-bottom:none;}
+.lang-name{font-size:1.7rem;font-weight:600;}
+.lang-level{font-size:1.2rem;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:.05em;}
+
+/* PROYECTOS CON HOVER AZUL */
+.project-item{padding:2.5rem 0;border-bottom:1px solid var(--border);transition:.3s;border-radius:10px;}
+.project-item:hover{background-color:var(--blue-soft);padding-left:1.5rem;border-bottom-color:transparent;}
+.project-item:last-child{border-bottom:none;}
+.project-title{font-size:2.3rem;font-weight:700;margin-bottom:.6rem;}
+.project-date{display:inline-block;margin-bottom:1.2rem;}
+.project-description{font-size:1.35rem;color:var(--muted);line-height:1.9;margin-bottom:1.8rem;text-align:justify;font-weight:450;}
+.project-tag{display:inline-block;padding:12px 26px;border:1.5px solid var(--black);border-radius:50px;font-size:1.2rem;font-weight:600;color:var(--black);background:var(--blue-soft);margin:0 10px 10px 0;transition:.2s;}
+.project-tag:hover{background:var(--black);color:#fff;}
+
+/* FORMULARIO DE CONTACTO */
+.contact-form .form-control{font-family:var(--font-b);font-size:1.25rem;padding:16px 20px;border-radius:14px;border:1.5px solid var(--border);background:#fff;color:var(--black);transition:.25s;}
+.contact-form .form-control:focus{border-color:var(--blue);box-shadow:0 0 0 .2rem rgba(59,130,196,.15);}
+.contact-form .form-label{font-weight:600;font-size:1.25rem;margin-bottom:.5rem;}
+.contact-form textarea.form-control{resize:vertical;min-height:150px;}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+    .nav-tabs-custom{justify-content:center;margin-top:1rem;}
+    .navbar-custom .container{flex-direction:column;}
+}
+@media(max-width:768px){
+    .hero-name{font-size:3.2rem;}
+    .hero-role{font-size:1.5rem;}
+    .hero-bio{font-size:1.2rem;text-align:center;text-align-last:center;}
+    .section-heading{font-size:2.4rem;}
+    .hero-contact{flex-direction:column;gap:1rem;align-items:center;}
+    .contact-item{white-space:normal;}
+    .skill-row,.lang-item,.course-item,.edu-item,.project-item{flex-direction:column;align-items:flex-start;gap:.6rem;}
+    .skill-row:hover,.lang-item:hover,.course-item:hover,.edu-item:hover,.project-item:hover{padding-left:1rem;}
+}
+.hero-avatar {
+    overflow: hidden; 
+}
+.hero-avatar .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      
+    object-position: center;
+    display: block;
+    border-radius: 50%;
+}
+.nav-tabs-custom a {
+    font-size: 1.2rem; 
+    padding: 10px 18px; 
+}
+.nav-tabs-custom {
+    gap: 32px; 
+}
+
+/* ============ IMPRESIÓN MEJORADA ============ */
+@media print {
+    /* Ocultar navbar, botón y formulario */
+    .no-print, .navbar-custom, #contacto { 
+        display: none !important; 
+    }
+    
+    @page {
+        margin: 1.5cm;
+        size: A4 portrait;
+    }
+    
+    body {
+        background: #fff !important;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+    }
+
+    /* Forzar el fondo azul del Hero */
+    .hero {
+        background: #1e5a8a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 2rem 0 !important;
+        margin-bottom: 1.5rem !important;
+        border-radius: 12px !important;
+    }
+    
+    .hero .container { max-width: 100% !important; }
+    .hero-avatar { 
+        width: 100px !important; 
+        height: 100px !important; 
+        margin-bottom: 1rem !important; 
+        box-shadow: none !important;
+    }
+    .hero-name { font-size: 24pt !important; margin-bottom: 0.5rem !important; }
+    .hero-role { font-size: 13pt !important; margin-bottom: 1rem !important; }
+    .hero-bio { font-size: 10.5pt !important; line-height: 1.4 !important; }
+    
+    .hero-contact { 
+        margin-top: 1.5rem !important; 
+        padding-top: 1rem !important; 
+        gap: 1rem !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    .contact-item { font-size: 10pt !important; }
+    .contact-item i { font-size: 11pt !important; }
+
+    /* Secciones y layouts en dos columnas */
+    .section-editorial {
+        padding: 1.5rem 0 !important;
+        page-break-inside: avoid;
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .section-editorial::before { display: none !important; }
+    
+    .col-lg-3 { 
+        width: 30% !important; 
+        float: left !important; 
+        padding-right: 1rem !important;
+    }
+    .col-lg-9 { 
+        width: 70% !important; 
+        float: left !important; 
+    }
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Tipografía de las secciones */
+    .section-heading { 
+        font-size: 18pt !important; 
+        margin-bottom: 1rem !important;
+        color: #0f172a !important;
+    }
+    .section-number { 
+        font-size: 12pt !important; 
+        padding: 2px 10px !important; 
+        background: #e6f0fa !important;
+        color: #1e5a8a !important;
+        border: 1px solid #3b82c4 !important;
+        box-shadow: none !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Items individuales */
+    .edu-item, .course-item, .project-item {
+        padding: 0.8rem 0 !important;
+        border-bottom: 1px solid #dce5ef !important;
+        page-break-inside: avoid;
+    }
+    .edu-title, .course-name, .project-title { 
+        font-size: 13pt !important; 
+        margin-bottom: 0.2rem !important;
+    }
+    .edu-institution, .course-institution {
+        font-size: 11pt !important;
+        margin-bottom: 0.2rem !important;
+    }
+    .edu-date, .project-date {
+        font-size: 9pt !important;
+    }
+    .project-description { 
+        font-size: 10.5pt !important; 
+        margin-bottom: 0.5rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Habilidades e Idiomas */
+    .skill-row, .lang-item {
+        padding: 0.6rem 0 !important;
+        border-bottom: 1px solid #dce5ef !important;
+        page-break-inside: avoid;
+    }
+    .skill-name, .lang-name { font-size: 12pt !important; }
+    .lang-level { font-size: 10pt !important; }
+    
+    /* Etiquetas */
+    .skill-tag, .project-tag {
+        font-size: 8pt !important;
+        padding: 2px 10px !important;
+        margin: 0 5px 5px 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        border-width: 1px !important;
+    }
+
+    /* Ocultar botones */
+    .btn, .btn-black { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar-custom no-print">
+<div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <ul class="nav-tabs-custom d-flex align-items-center gap-3">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="#educacion">Educación</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#idiomas">Idiomas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button onclick="window.print()" class="btn btn-black"><i class="bi bi-download me-2"></i>PDF</button>
+    </div>
+</nav>
+
+<!-- HERO CON BANNER AZUL -->
+<header class="hero" id="inicio">
+    <div class="container">
+       <div class="hero-avatar">
+    <img src="img/nancy.jpg" alt="<?php echo $nombre; ?>" class="avatar-img">
+</div>
+        <h1 class="hero-name"><?php echo $nombre; ?></h1>
+        <p class="hero-role"><?php echo $profesion; ?></p>
+        <p class="hero-bio"><?php echo $bio; ?></p>
+        <div class="hero-contact">
+            <div class="contact-item"><i class="bi bi-geo-alt"></i><span><?php echo $ubicacion; ?></span></div>
+            <div class="contact-item">
+                <i class="bi bi-telephone"></i>
+                <a href="https://wa.me/52<?php echo $telefono; ?>?text=Hola%20Nancy,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" style="color:#ffffff;text-decoration:none;"><?php echo $telefono; ?></a>
+            </div>
+            <div class="contact-item"><i class="bi bi-envelope"></i><a href="mailto:<?php echo $email; ?>" style="color:#ffffff;text-decoration:none;"><?php echo $email; ?></a></div>
+            <div class="contact-item"><i class="bi bi-github"></i><a href="https://<?php echo $github; ?>" target="_blank" style="color:#ffffff;text-decoration:none;"><?php echo $github; ?></a></div>
+        </div>
+    </div>
+</header>
+
+<!-- EDUCACIÓN -->
+<section class="section-editorial" id="educacion">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 mb-lg-0">
+                <span class="section-number">01</span>
+                <h2 class="section-heading">Educación</h2>
+            </div>
+            <div class="col-lg-9">
+                <div class="edu-item">
+                    <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-2 mb-1">
+                        <h3 class="edu-title">Licenciatura en Informática</h3>
+                        <span class="edu-date">2023 – Presente</span>
+                    </div>
+                    <div class="edu-institution">Facultad de Estudios Superiores Cuautitlán</div>
+                </div>
+                <div class="edu-item">
+                    <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-2 mb-1">
+                        <h3 class="edu-title">Bachillerato</h3>
+                        <span class="edu-date">2020 – 2023</span>
+                    </div>
+                    <div class="edu-institution">Colegio de Ciencias y Humanidades Plantel Naucalpan</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CURSOS -->
+<section class="section-editorial" id="cursos">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 mb-lg-0">
+                <span class="section-number">02</span>
+                <h2 class="section-heading">Cursos</h2>
+            </div>
+            <div class="col-lg-9">
+                <?php foreach ($cursos as $c): ?>
+                <div class="course-item">
+                    <div class="course-name"><?php echo $c['nombre']; ?></div>
+                    <div class="course-institution"><?php echo $c['institucion']; ?></div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HABILIDADES -->
+<section class="section-editorial" id="habilidades">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 mb-lg-0">
+                <span class="section-number">03</span>
+                <h2 class="section-heading">Habilidades</h2>
+            </div>
+            <div class="col-lg-9">
+                <?php foreach ($habilidades as $h): ?>
+                <div class="skill-row">
+                    <span class="skill-name"><?php echo $h['nombre']; ?></span>
+                    <span class="skill-tag"><?php echo $h['nivel']; ?></span>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HABILIDADES BLANDAS -->
+<section class="section-editorial" id="habilidades-blandas">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 mb-lg-0">
+                <span class="section-number">04</span>
+                <h2 class="section-heading">Habilidades Blandas</h2>
+            </div>
+            <div class="col-lg-9">
+                <?php foreach ($habilidadesBlandas as $hb): ?>
+                <div class="skill-row">
+                    <span class="skill-name"><?php echo $hb['nombre']; ?></span>
+                    <span class="skill-tag"><?php echo $hb['nivel']; ?></span>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="section-editorial" id="proyectos">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 mb-lg-0">
+                <span class="section-number">05</span>
+                <h2 class="section-heading">Proyectos</h2>
+            </div>
+            <div class="col-lg-9">
+                <?php foreach ($proyectos as $p): ?>
+                <div class="project-item">
+                    <span class="project-date"><?php echo $p['fecha']; ?></span>
+                    <h3 class="project-title"><?php echo $p['titulo']; ?></h3>
+                    <p class="project-description"><?php echo $p['descripcion']; ?></p>
+                    <div>
+                        <?php foreach ($p['tags'] as $t): ?>
+                            <span class="project-tag"><?php echo $t; ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IDIOMAS -->
+<section class="section-editorial" id="idiomas">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 mb-lg-0">
+                <span class="section-number">06</span>
+                <h2 class="section-heading">Idiomas</h2>
+            </div>
+            <div class="col-lg-9">
+                <?php foreach ($idiomas as $i): ?>
+                <div class="lang-item">
+                    <span class="lang-name"><?php echo $i['nombre']; ?></span>
+                    <span class="lang-level"><?php echo $i['nivel']; ?></span>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section-editorial" id="contacto">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-4 mb-lg-0">
+                <span class="section-number">07</span>
+                <h2 class="section-heading">Contacto</h2>
+            </div>
+            <div class="col-lg-9">
+                <form class="contact-form" action="https://formsubmit.co/<?php echo $email; ?>" method="POST">
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correo" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Motivo de tu mensaje" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <button type="submit" class="btn btn-black"><i class="bi bi-send me-2"></i>Enviar mensaje</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const links = document.querySelectorAll('.nav-tabs-custom a');
+    function active(){
+        let pos = window.scrollY + 130;
+        sections.forEach(s => {
+            if(pos >= s.offsetTop && pos < s.offsetTop + s.offsetHeight){
+                links.forEach(l => {
+                    l.classList.remove('active');
+                    if(l.getAttribute('href') === '#' + s.id) l.classList.add('active');
+                });
+            }
+        });
+    }
+    window.addEventListener('scroll', active);
+    active();
+});
+</script>
+</body>
+</html>
