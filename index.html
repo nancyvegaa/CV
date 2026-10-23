@@ -1,60 +1,9 @@
-<?php
-    $nombre = "Nancy Areli Vega Vázquez";
-    $profesion = "Estudiante de Informática";
-    $bio = "Enfocada en la administración de bases de datos relacionales y la maquetación de interfaces web. Me interesa la estructuración precisa de la información y la presentación visual clara de datos que faciliten la toma de decisiones.";
-    $ubicacion = "Naucalpan, México";
-    $telefono = "5615453941";
-    $email = "nancyvegaat@gmail.com";
-    $github = "github.com/nancyvegaa";
-
-    $idiomas = [
-        ["nombre" => "Español", "nivel" => "Nativo"],
-        ["nombre" => "Inglés", "nivel" => "B1"]
-    ];
-
-    $habilidades = [
-        ["nombre" => "C / C++", "nivel" => "Intermedio"],
-        ["nombre" => "HTML5 / CSS3", "nivel" => "Intermedio"],
-        ["nombre" => "MySQL", "nivel" => "Intermedio"],
-        ["nombre" => "SQL Server", "nivel" => "Intermedio"],
-        ["nombre" => "Excel", "nivel" => "Intermedio"],
-    ];
-
-    $habilidadesBlandas = [
-        ["nombre" => "Trabajo en equipo", "nivel" => "Destacado"],
-        ["nombre" => "Comunicación efectiva", "nivel" => "Destacado"],
-        ["nombre" => "Organización y planificación", "nivel" => "Destacado"],
-        ["nombre" => "Pensamiento analítico", "nivel" => "Destacado"],
-        ["nombre" => "Atención al detalle", "nivel" => "Destacado"],
-    ];
-
-    $cursos = [
-        ["nombre" => "Desarrollo Web Frontend (HTML5 y CSS3)", "institucion" => "Fundación Televisa / Tecnolochicas PRO"],
-        ["nombre" => "Excel – Básico a Intermedio", "institucion" => "Santander Open Academy"],
-        ["nombre" => "Introducción a la Ciencia de Datos", "institucion" => "Fundación Televisa / Tecnolochicas PRO"]
-    ];
-
-    $proyectos = [
-        [
-            "titulo" => "Sistema de préstamos de Biblioteca",
-            "fecha" => "Proyecto Académico",
-            "descripcion" => "Plataforma web con control de acceso por roles (administrador y alumno). Desarrollo de la arquitectura inicial, triggers para validaciones, rediseño de interfaz y mantenimiento en SQL Server.",
-            "tags" => ["PHP", "HTML5", "CSS3", "SQL Server"]
-        ],
-        [
-            "titulo" => "Análisis de Datos con Diagrama de Pareto",
-            "fecha" => "Proyecto Académico",
-            "descripcion" => "Vinculación de la base de datos (MS Access) de una aplicación Java hacia Excel para generar reportes con el Diagrama de Pareto. Identificación de productos de alta rotación y servicios clave del negocio.",
-            "tags" => ["Excel", "Análisis de Datos", "Access", "Java"]
-        ]
-    ];
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio — <?php echo $nombre; ?></title>
+<title>Portafolio — Nancy Areli Vega Vázquez</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -342,19 +291,19 @@ h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
 <header class="hero" id="inicio">
     <div class="container">
        <div class="hero-avatar">
-    <img src="img/nancy.jpg" alt="<?php echo $nombre; ?>" class="avatar-img">
+    <img src="img/nancy.jpg" alt="Nancy Areli Vega Vázquez" class="avatar-img">
 </div>
-        <h1 class="hero-name"><?php echo $nombre; ?></h1>
-        <p class="hero-role"><?php echo $profesion; ?></p>
-        <p class="hero-bio"><?php echo $bio; ?></p>
+        <h1 class="hero-name">Nancy Areli Vega Vázquez</h1>
+        <p class="hero-role">Estudiante de Informática</p>
+        <p class="hero-bio">Enfocada en la administración de bases de datos relacionales y la maquetación de interfaces web. Me interesa la estructuración precisa de la información y la presentación visual clara de datos que faciliten la toma de decisiones.</p>
         <div class="hero-contact">
-            <div class="contact-item"><i class="bi bi-geo-alt"></i><span><?php echo $ubicacion; ?></span></div>
+            <div class="contact-item"><i class="bi bi-geo-alt"></i><span>Naucalpan, México</span></div>
             <div class="contact-item">
                 <i class="bi bi-telephone"></i>
-                <a href="https://wa.me/52<?php echo $telefono; ?>?text=Hola%20Nancy,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" style="color:#ffffff;text-decoration:none;"><?php echo $telefono; ?></a>
+                <a href="https://wa.me/525615453941?text=Hola%20Nancy,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" style="color:#ffffff;text-decoration:none;">5615453941</a>
             </div>
-            <div class="contact-item"><i class="bi bi-envelope"></i><a href="mailto:<?php echo $email; ?>" style="color:#ffffff;text-decoration:none;"><?php echo $email; ?></a></div>
-            <div class="contact-item"><i class="bi bi-github"></i><a href="https://<?php echo $github; ?>" target="_blank" style="color:#ffffff;text-decoration:none;"><?php echo $github; ?></a></div>
+            <div class="contact-item"><i class="bi bi-envelope"></i><a href="mailto:nancyvegaat@gmail.com" style="color:#ffffff;text-decoration:none;">nancyvegaat@gmail.com</a></div>
+            <div class="contact-item"><i class="bi bi-github"></i><a href="https://github.com/nancyvegaa" target="_blank" style="color:#ffffff;text-decoration:none;">github.com/nancyvegaa</a></div>
         </div>
     </div>
 </header>
@@ -396,13 +345,19 @@ h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
                 <h2 class="section-heading">Cursos</h2>
             </div>
             <div class="col-lg-9">
-                <?php foreach ($cursos as $c): ?>
-                <div class="course-item">
-                    <div class="course-name"><?php echo $c['nombre']; ?></div>
-                    <div class="course-institution"><?php echo $c['institucion']; ?></div>
+                                <div class="course-item">
+                    <div class="course-name">Desarrollo Web Frontend (HTML5 y CSS3)</div>
+                    <div class="course-institution">Fundación Televisa / Tecnolochicas PRO</div>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                                <div class="course-item">
+                    <div class="course-name">Excel – Básico a Intermedio</div>
+                    <div class="course-institution">Santander Open Academy</div>
+                </div>
+                                <div class="course-item">
+                    <div class="course-name">Introducción a la Ciencia de Datos</div>
+                    <div class="course-institution">Fundación Televisa / Tecnolochicas PRO</div>
+                </div>
+                            </div>
         </div>
     </div>
 </section>
@@ -416,13 +371,27 @@ h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
                 <h2 class="section-heading">Habilidades</h2>
             </div>
             <div class="col-lg-9">
-                <?php foreach ($habilidades as $h): ?>
-                <div class="skill-row">
-                    <span class="skill-name"><?php echo $h['nombre']; ?></span>
-                    <span class="skill-tag"><?php echo $h['nivel']; ?></span>
+                                <div class="skill-row">
+                    <span class="skill-name">C / C++</span>
+                    <span class="skill-tag">Intermedio</span>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                                <div class="skill-row">
+                    <span class="skill-name">HTML5 / CSS3</span>
+                    <span class="skill-tag">Intermedio</span>
+                </div>
+                                <div class="skill-row">
+                    <span class="skill-name">MySQL</span>
+                    <span class="skill-tag">Intermedio</span>
+                </div>
+                                <div class="skill-row">
+                    <span class="skill-name">SQL Server</span>
+                    <span class="skill-tag">Intermedio</span>
+                </div>
+                                <div class="skill-row">
+                    <span class="skill-name">Excel</span>
+                    <span class="skill-tag">Intermedio</span>
+                </div>
+                            </div>
         </div>
     </div>
 </section>
@@ -436,13 +405,27 @@ h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
                 <h2 class="section-heading">Habilidades Blandas</h2>
             </div>
             <div class="col-lg-9">
-                <?php foreach ($habilidadesBlandas as $hb): ?>
-                <div class="skill-row">
-                    <span class="skill-name"><?php echo $hb['nombre']; ?></span>
-                    <span class="skill-tag"><?php echo $hb['nivel']; ?></span>
+                                <div class="skill-row">
+                    <span class="skill-name">Trabajo en equipo</span>
+                    <span class="skill-tag">Destacado</span>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                                <div class="skill-row">
+                    <span class="skill-name">Comunicación efectiva</span>
+                    <span class="skill-tag">Destacado</span>
+                </div>
+                                <div class="skill-row">
+                    <span class="skill-name">Organización y planificación</span>
+                    <span class="skill-tag">Destacado</span>
+                </div>
+                                <div class="skill-row">
+                    <span class="skill-name">Pensamiento analítico</span>
+                    <span class="skill-tag">Destacado</span>
+                </div>
+                                <div class="skill-row">
+                    <span class="skill-name">Atención al detalle</span>
+                    <span class="skill-tag">Destacado</span>
+                </div>
+                            </div>
         </div>
     </div>
 </section>
@@ -456,19 +439,29 @@ h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
                 <h2 class="section-heading">Proyectos</h2>
             </div>
             <div class="col-lg-9">
-                <?php foreach ($proyectos as $p): ?>
-                <div class="project-item">
-                    <span class="project-date"><?php echo $p['fecha']; ?></span>
-                    <h3 class="project-title"><?php echo $p['titulo']; ?></h3>
-                    <p class="project-description"><?php echo $p['descripcion']; ?></p>
+                                <div class="project-item">
+                    <span class="project-date">Proyecto Académico</span>
+                    <h3 class="project-title">Sistema de préstamos de Biblioteca</h3>
+                    <p class="project-description">Plataforma web con control de acceso por roles (administrador y alumno). Desarrollo de la arquitectura inicial, triggers para validaciones, rediseño de interfaz y mantenimiento en SQL Server.</p>
                     <div>
-                        <?php foreach ($p['tags'] as $t): ?>
-                            <span class="project-tag"><?php echo $t; ?></span>
-                        <?php endforeach; ?>
-                    </div>
+                                                    <span class="project-tag">PHP</span>
+                                                    <span class="project-tag">HTML5</span>
+                                                    <span class="project-tag">CSS3</span>
+                                                    <span class="project-tag">SQL Server</span>
+                                            </div>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                                <div class="project-item">
+                    <span class="project-date">Proyecto Académico</span>
+                    <h3 class="project-title">Análisis de Datos con Diagrama de Pareto</h3>
+                    <p class="project-description">Vinculación de la base de datos (MS Access) de una aplicación Java hacia Excel para generar reportes con el Diagrama de Pareto. Identificación de productos de alta rotación y servicios clave del negocio.</p>
+                    <div>
+                                                    <span class="project-tag">Excel</span>
+                                                    <span class="project-tag">Análisis de Datos</span>
+                                                    <span class="project-tag">Access</span>
+                                                    <span class="project-tag">Java</span>
+                                            </div>
+                </div>
+                            </div>
         </div>
     </div>
 </section>
@@ -482,13 +475,15 @@ h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
                 <h2 class="section-heading">Idiomas</h2>
             </div>
             <div class="col-lg-9">
-                <?php foreach ($idiomas as $i): ?>
-                <div class="lang-item">
-                    <span class="lang-name"><?php echo $i['nombre']; ?></span>
-                    <span class="lang-level"><?php echo $i['nivel']; ?></span>
+                                <div class="lang-item">
+                    <span class="lang-name">Español</span>
+                    <span class="lang-level">Nativo</span>
                 </div>
-                <?php endforeach; ?>
-            </div>
+                                <div class="lang-item">
+                    <span class="lang-name">Inglés</span>
+                    <span class="lang-level">B1</span>
+                </div>
+                            </div>
         </div>
     </div>
 </section>
@@ -502,7 +497,7 @@ h1,h2,h3{font-family:var(--font-h);letter-spacing:-.02em;}
                 <h2 class="section-heading">Contacto</h2>
             </div>
             <div class="col-lg-9">
-                <form class="contact-form" action="https://formsubmit.co/<?php echo $email; ?>" method="POST">
+                <form class="contact-form" action="https://formsubmit.co/nancyvegaat@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
